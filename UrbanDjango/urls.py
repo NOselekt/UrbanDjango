@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("class/", class_view),
     path("func/", func_view),
-    path("", TemplateView.as_view(template_name="main.html"))
+    path("moscow/", TemplateView.as_view(template_name="moscow.html")),
+    path("saint-petersburg/", TemplateView.as_view(template_name="saint-petersburg.html")),
+    path("", TemplateView.as_view(template_name="main_page.html"))
 ]
