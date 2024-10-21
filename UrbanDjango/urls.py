@@ -18,12 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 from task_2.views import class_view, func_view
+from task_4.views import moscow_view, petersburg_view, menu_view
 
 urlpatterns = [
+    path("", TemplateView.as_view(template_name="main.html")),
     path('admin/', admin.site.urls),
     path("class/", class_view),
     path("func/", func_view),
-    path("moscow/", TemplateView.as_view(template_name="moscow.html")),
-    path("saint-petersburg/", TemplateView.as_view(template_name="saint-petersburg.html")),
-    path("", TemplateView.as_view(template_name="main_page.html"))
+    path("metro/", menu_view),
+    path("metro/moscow/", moscow_view),
+    path("metro/saint-petersburg/", petersburg_view),
 ]
